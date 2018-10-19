@@ -8,12 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		11431057217A2400007C0E1A /* RxUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 11431055217A2400007C0E1A /* RxUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11431064217A240F007C0E1A /* UITableView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143105D217A240F007C0E1A /* UITableView+Rx.swift */; };
+		11431066217A240F007C0E1A /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143105F217A240F007C0E1A /* UIViewController+Rx.swift */; };
+		11431068217A240F007C0E1A /* RxUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11431061217A240F007C0E1A /* RxUIKit.swift */; };
+		1143106A217A240F007C0E1A /* UIPageViewController+rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11431063217A240F007C0E1A /* UIPageViewController+rx.swift */; };
+		1143106F217A2436007C0E1A /* RxPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143106D217A2435007C0E1A /* RxPageViewControllerDataSource.swift */; };
+		11431070217A2436007C0E1A /* RxTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143106E217A2435007C0E1A /* RxTableViewDataSource.swift */; };
+		11431073217A244B007C0E1A /* RxPageViewControllerDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11431072217A244B007C0E1A /* RxPageViewControllerDataSourceType.swift */; };
+		1143107C217A24A6007C0E1A /* RxPageViewControllerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143107A217A24A6007C0E1A /* RxPageViewControllerDelegateProxy.swift */; };
+		1143107D217A24A6007C0E1A /* RxPageViewControllerDataSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143107B217A24A6007C0E1A /* RxPageViewControllerDataSourceProxy.swift */; };
+		11431081217A2557007C0E1A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1143107F217A2557007C0E1A /* RxCocoa.framework */; };
+		11431082217A2557007C0E1A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11431080217A2557007C0E1A /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11431052217A2400007C0E1A /* RxUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11431055217A2400007C0E1A /* RxUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxUIKit.h; sourceTree = "<group>"; };
 		11431056217A2400007C0E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1143105D217A240F007C0E1A /* UITableView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Rx.swift"; sourceTree = "<group>"; };
+		1143105F217A240F007C0E1A /* UIViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		11431061217A240F007C0E1A /* RxUIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxUIKit.swift; sourceTree = "<group>"; };
+		11431063217A240F007C0E1A /* UIPageViewController+rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+rx.swift"; sourceTree = "<group>"; };
+		1143106D217A2435007C0E1A /* RxPageViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxPageViewControllerDataSource.swift; sourceTree = "<group>"; };
+		1143106E217A2435007C0E1A /* RxTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTableViewDataSource.swift; sourceTree = "<group>"; };
+		11431072217A244B007C0E1A /* RxPageViewControllerDataSourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxPageViewControllerDataSourceType.swift; sourceTree = "<group>"; };
+		1143107A217A24A6007C0E1A /* RxPageViewControllerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxPageViewControllerDelegateProxy.swift; sourceTree = "<group>"; };
+		1143107B217A24A6007C0E1A /* RxPageViewControllerDataSourceProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxPageViewControllerDataSourceProxy.swift; sourceTree = "<group>"; };
+		1143107F217A2557007C0E1A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		11431080217A2557007C0E1A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11431081217A2557007C0E1A /* RxCocoa.framework in Frameworks */,
+				11431082217A2557007C0E1A /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +56,7 @@
 			children = (
 				11431054217A2400007C0E1A /* RxUIKit */,
 				11431053217A2400007C0E1A /* Products */,
+				1143107E217A2557007C0E1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,9 +72,51 @@
 			isa = PBXGroup;
 			children = (
 				11431055217A2400007C0E1A /* RxUIKit.h */,
+				11431061217A240F007C0E1A /* RxUIKit.swift */,
+				11431075217A2475007C0E1A /* Proxies */,
+				11431071217A2444007C0E1A /* Protocols */,
+				1143106C217A242B007C0E1A /* DataSources */,
+				11431063217A240F007C0E1A /* UIPageViewController+rx.swift */,
+				1143105D217A240F007C0E1A /* UITableView+Rx.swift */,
+				1143105F217A240F007C0E1A /* UIViewController+Rx.swift */,
 				11431056217A2400007C0E1A /* Info.plist */,
 			);
 			path = RxUIKit;
+			sourceTree = "<group>";
+		};
+		1143106C217A242B007C0E1A /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				1143106D217A2435007C0E1A /* RxPageViewControllerDataSource.swift */,
+				1143106E217A2435007C0E1A /* RxTableViewDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		11431071217A2444007C0E1A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				11431072217A244B007C0E1A /* RxPageViewControllerDataSourceType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		11431075217A2475007C0E1A /* Proxies */ = {
+			isa = PBXGroup;
+			children = (
+				1143107B217A24A6007C0E1A /* RxPageViewControllerDataSourceProxy.swift */,
+				1143107A217A24A6007C0E1A /* RxPageViewControllerDelegateProxy.swift */,
+			);
+			path = Proxies;
+			sourceTree = "<group>";
+		};
+		1143107E217A2557007C0E1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1143107F217A2557007C0E1A /* RxCocoa.framework */,
+				11431080217A2557007C0E1A /* RxSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +141,7 @@
 				1143104E217A2400007C0E1A /* Sources */,
 				1143104F217A2400007C0E1A /* Frameworks */,
 				11431050217A2400007C0E1A /* Resources */,
+				11431083217A25AB007C0E1A /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -95,6 +163,7 @@
 				TargetAttributes = {
 					11431051217A2400007C0E1A = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -125,11 +194,43 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11431083217A25AB007C0E1A /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1143104E217A2400007C0E1A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11431066217A240F007C0E1A /* UIViewController+Rx.swift in Sources */,
+				11431073217A244B007C0E1A /* RxPageViewControllerDataSourceType.swift in Sources */,
+				1143106F217A2436007C0E1A /* RxPageViewControllerDataSource.swift in Sources */,
+				11431070217A2436007C0E1A /* RxTableViewDataSource.swift in Sources */,
+				11431064217A240F007C0E1A /* UITableView+Rx.swift in Sources */,
+				1143107D217A24A6007C0E1A /* RxPageViewControllerDataSourceProxy.swift in Sources */,
+				1143107C217A24A6007C0E1A /* RxPageViewControllerDelegateProxy.swift in Sources */,
+				11431068217A240F007C0E1A /* RxUIKit.swift in Sources */,
+				1143106A217A240F007C0E1A /* UIPageViewController+rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,12 +362,17 @@
 		1143105B217A2400007C0E1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -277,6 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.haymob.RxUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -285,12 +392,17 @@
 		1143105C217A2400007C0E1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
