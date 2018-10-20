@@ -141,7 +141,6 @@
 				1143104E217A2400007C0E1A /* Sources */,
 				1143104F217A2400007C0E1A /* Frameworks */,
 				11431050217A2400007C0E1A /* Resources */,
-				11431083217A25AB007C0E1A /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -193,29 +192,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		11431083217A25AB007C0E1A /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-			);
-			name = Carthage;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1143104E217A2400007C0E1A /* Sources */ = {
