@@ -11,7 +11,7 @@
 		11431064217A240F007C0E1A /* UITableView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143105D217A240F007C0E1A /* UITableView+Rx.swift */; };
 		11431066217A240F007C0E1A /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143105F217A240F007C0E1A /* UIViewController+Rx.swift */; };
 		11431068217A240F007C0E1A /* RxUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11431061217A240F007C0E1A /* RxUIKit.swift */; };
-		1143106A217A240F007C0E1A /* UIPageViewController+rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11431063217A240F007C0E1A /* UIPageViewController+rx.swift */; };
+		1143106A217A240F007C0E1A /* UIPageViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11431063217A240F007C0E1A /* UIPageViewController+Rx.swift */; };
 		1143106F217A2436007C0E1A /* RxPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143106D217A2435007C0E1A /* RxPageViewControllerDataSource.swift */; };
 		11431070217A2436007C0E1A /* RxTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143106E217A2435007C0E1A /* RxTableViewDataSource.swift */; };
 		11431073217A244B007C0E1A /* RxPageViewControllerDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11431072217A244B007C0E1A /* RxPageViewControllerDataSourceType.swift */; };
@@ -28,7 +28,7 @@
 		1143105D217A240F007C0E1A /* UITableView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Rx.swift"; sourceTree = "<group>"; };
 		1143105F217A240F007C0E1A /* UIViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		11431061217A240F007C0E1A /* RxUIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxUIKit.swift; sourceTree = "<group>"; };
-		11431063217A240F007C0E1A /* UIPageViewController+rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+rx.swift"; sourceTree = "<group>"; };
+		11431063217A240F007C0E1A /* UIPageViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Rx.swift"; sourceTree = "<group>"; };
 		1143106D217A2435007C0E1A /* RxPageViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxPageViewControllerDataSource.swift; sourceTree = "<group>"; };
 		1143106E217A2435007C0E1A /* RxTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTableViewDataSource.swift; sourceTree = "<group>"; };
 		11431072217A244B007C0E1A /* RxPageViewControllerDataSourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxPageViewControllerDataSourceType.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 				11431075217A2475007C0E1A /* Proxies */,
 				11431071217A2444007C0E1A /* Protocols */,
 				1143106C217A242B007C0E1A /* DataSources */,
-				11431063217A240F007C0E1A /* UIPageViewController+rx.swift */,
+				11431063217A240F007C0E1A /* UIPageViewController+Rx.swift */,
 				1143105D217A240F007C0E1A /* UITableView+Rx.swift */,
 				1143105F217A240F007C0E1A /* UIViewController+Rx.swift */,
 				11431056217A2400007C0E1A /* Info.plist */,
@@ -206,7 +206,7 @@
 				1143107D217A24A6007C0E1A /* RxPageViewControllerDataSourceProxy.swift in Sources */,
 				1143107C217A24A6007C0E1A /* RxPageViewControllerDelegateProxy.swift in Sources */,
 				11431068217A240F007C0E1A /* RxUIKit.swift in Sources */,
-				1143106A217A240F007C0E1A /* UIPageViewController+rx.swift in Sources */,
+				1143106A217A240F007C0E1A /* UIPageViewController+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

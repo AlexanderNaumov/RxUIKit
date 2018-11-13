@@ -62,7 +62,22 @@ extension Reactive where Base: UIPageViewController {
         where O.E == S {
             return { source in
                 return { configureController in
-                    let dataSource = RxPageViewControllerDataSource<S> { _, i, item in
+                    let dataSource = RxPageViewControllerArrayDataSource<S> { _, i, item in
+                        return configureController(i, item)
+                    }
+                    return self.pages(dataSource: dataSource)(source)
+                }
+            }
+    }
+    
+    public func loopPages<S: Sequence, O: ObservableType>()
+        -> (_ source: O)
+        -> (_ configureController: @escaping (Int, S.Element) -> UIViewController)
+        -> Disposable
+        where O.E == S {
+            return { source in
+                return { configureController in
+                    let dataSource = RxPageViewControllerLoopDataSource<S> { _, i, item in
                         return configureController(i, item)
                     }
                     return self.pages(dataSource: dataSource)(source)
@@ -73,23 +88,34 @@ extension Reactive where Base: UIPageViewController {
 
 extension UIPageViewController {
     
+    private class IndexContainer: NSObject, NSCopying {
+        let index: Int
+        init(index: Int) {
+            self.index = index
+            super.init()
+        }
+        func copy(with zone: NSZone? = nil) -> Any {
+            return IndexContainer(index: index)
+        }
+    }
+    
     private struct AssociatedKeys {
         static var controllers: UInt8 = 54
     }
     
-    private var _controllers: NSMapTable<NSNumber, UIViewController>? {
-        get { return objc_getAssociatedObject(self, &AssociatedKeys.controllers) as? NSMapTable<NSNumber, UIViewController> }
+    private var _controllers: NSMapTable<IndexContainer, UIViewController>? {
+        get { return objc_getAssociatedObject(self, &AssociatedKeys.controllers) as? NSMapTable<IndexContainer, UIViewController> }
         set { objc_setAssociatedObject(self, &AssociatedKeys.controllers, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
     
     public func set(controller: UIViewController, at index: Int) {
-        if _controllers == nil { _controllers = NSMapTable.weakToStrongObjects() }
-        _controllers!.setObject(controller, forKey: NSNumber(value: index))
+        if _controllers == nil { _controllers = NSMapTable.strongToWeakObjects() }
+        _controllers!.setObject(controller, forKey: IndexContainer(index: index))
     }
     
     public func index(of viewController: UIViewController) -> Int? {
-        let controllers = _controllers?.dictionaryRepresentation() as? [NSNumber: UIViewController]
-        return controllers?.first { $0.value == viewController }?.key.intValue
+        let controllers = _controllers?.dictionaryRepresentation() as? [IndexContainer: UIViewController]
+        return controllers?.first { $0.value == viewController }?.key.index
     }
     
     public var firstIndex: Int? {

@@ -18,8 +18,8 @@ open class RxPageViewControllerDataSource<S: Sequence>: NSObject, UIPageViewCont
         S.Element
     ) -> UIViewController
     
-    private var items: [S.Element] = []
-    private var configureViewController: ConfigureViewController
+    internal var items: [S.Element] = []
+    internal var configureViewController: ConfigureViewController
     
     private lazy var viewControllers = NSMapTable<NSNumber, UIViewController>.weakToStrongObjects()
     
@@ -27,20 +27,12 @@ open class RxPageViewControllerDataSource<S: Sequence>: NSObject, UIPageViewCont
         self.configureViewController = configureViewController
     }
     
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard var index = pageViewController.index(of: viewController), index < items.count - 1 else { return nil }
-        index += 1
-        let vc = configureViewController(pageViewController, index, items[index])
-        pageViewController.set(controller: vc, at: index)
-        return vc
+    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        return nil
     }
     
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard var index = pageViewController.index(of: viewController), index > 0 else { return nil }
-        index -= 1
-        let vc = configureViewController(pageViewController, index, items[index])
-        pageViewController.set(controller: vc, at: index)
-        return vc
+    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        return nil
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, setViewControllerAt index: Int, direction: UIPageViewController.NavigationDirection, animated: Bool) {
@@ -55,5 +47,43 @@ open class RxPageViewControllerDataSource<S: Sequence>: NSObject, UIPageViewCont
             guard self.items.count > 0 else { return }
             self.pageViewController(pageViewController, setViewControllerAt: 0, direction: .forward, animated: false)
         }.on(observedEvent)
+    }
+}
+
+open class RxPageViewControllerArrayDataSource<S: Sequence>: RxPageViewControllerDataSource<S> {
+    public override func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard var index = pageViewController.index(of: viewController), index < items.count - 1 else { return nil }
+        index += 1
+        let vc = configureViewController(pageViewController, index, items[index])
+        pageViewController.set(controller: vc, at: index)
+        return vc
+    }
+
+    public override func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard var index = pageViewController.index(of: viewController), index > 0 else { return nil }
+        index -= 1
+        let vc = configureViewController(pageViewController, index, items[index])
+        pageViewController.set(controller: vc, at: index)
+        return vc
+    }
+}
+
+open class RxPageViewControllerLoopDataSource<S: Sequence>: RxPageViewControllerDataSource<S> {
+    public override func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard var index = pageViewController.index(of: viewController), items.count > 1 else { return nil }
+        index += 1
+        if index >= items.count { index = 0 }
+        let vc = configureViewController(pageViewController, index, items[index])
+        pageViewController.set(controller: vc, at: index)
+        return vc
+    }
+    
+    public override func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard var index = pageViewController.index(of: viewController), items.count > 1 else { return nil }
+        index -= 1
+        if index < 0 { index = items.count - 1 }
+        let vc = configureViewController(pageViewController, index, items[index])
+        pageViewController.set(controller: vc, at: index)
+        return vc
     }
 }
