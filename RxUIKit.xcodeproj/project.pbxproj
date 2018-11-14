@@ -19,6 +19,7 @@
 		1143107D217A24A6007C0E1A /* RxPageViewControllerDataSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143107B217A24A6007C0E1A /* RxPageViewControllerDataSourceProxy.swift */; };
 		11431081217A2557007C0E1A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1143107F217A2557007C0E1A /* RxCocoa.framework */; };
 		11431082217A2557007C0E1A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11431080217A2557007C0E1A /* RxSwift.framework */; };
+		11AA9B8F219C98AB007B5ADF /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AA9B8E219C98AB007B5ADF /* UIScrollView+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		1143107B217A24A6007C0E1A /* RxPageViewControllerDataSourceProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxPageViewControllerDataSourceProxy.swift; sourceTree = "<group>"; };
 		1143107F217A2557007C0E1A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		11431080217A2557007C0E1A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		11AA9B8E219C98AB007B5ADF /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				1143106C217A242B007C0E1A /* DataSources */,
 				11431063217A240F007C0E1A /* UIPageViewController+Rx.swift */,
 				1143105D217A240F007C0E1A /* UITableView+Rx.swift */,
+				11AA9B8E219C98AB007B5ADF /* UIScrollView+Rx.swift */,
 				1143105F217A240F007C0E1A /* UIViewController+Rx.swift */,
 				11431056217A2400007C0E1A /* Info.plist */,
 			);
@@ -207,6 +210,7 @@
 				1143107C217A24A6007C0E1A /* RxPageViewControllerDelegateProxy.swift in Sources */,
 				11431068217A240F007C0E1A /* RxUIKit.swift in Sources */,
 				1143106A217A240F007C0E1A /* UIPageViewController+Rx.swift in Sources */,
+				11AA9B8F219C98AB007B5ADF /* UIScrollView+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
