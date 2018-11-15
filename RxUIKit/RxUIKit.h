@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MultipleDelegate.h"
+
 //! Project version number for RxUIKit.
 FOUNDATION_EXPORT double RxUIKitVersionNumber;
 

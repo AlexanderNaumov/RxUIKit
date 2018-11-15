@@ -20,6 +20,8 @@
 		11431081217A2557007C0E1A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1143107F217A2557007C0E1A /* RxCocoa.framework */; };
 		11431082217A2557007C0E1A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11431080217A2557007C0E1A /* RxSwift.framework */; };
 		11AA9B8F219C98AB007B5ADF /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AA9B8E219C98AB007B5ADF /* UIScrollView+Rx.swift */; };
+		11AA9B96219D9223007B5ADF /* MultipleDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AA9B94219D9223007B5ADF /* MultipleDelegate.m */; };
+		11AA9B97219D9223007B5ADF /* MultipleDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 11AA9B95219D9223007B5ADF /* MultipleDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		1143107F217A2557007C0E1A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		11431080217A2557007C0E1A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		11AA9B8E219C98AB007B5ADF /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
+		11AA9B94219D9223007B5ADF /* MultipleDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleDelegate.m; sourceTree = "<group>"; };
+		11AA9B95219D9223007B5ADF /* MultipleDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				1143105D217A240F007C0E1A /* UITableView+Rx.swift */,
 				11AA9B8E219C98AB007B5ADF /* UIScrollView+Rx.swift */,
 				1143105F217A240F007C0E1A /* UIViewController+Rx.swift */,
+				11AA9B95219D9223007B5ADF /* MultipleDelegate.h */,
+				11AA9B94219D9223007B5ADF /* MultipleDelegate.m */,
 				11431056217A2400007C0E1A /* Info.plist */,
 			);
 			path = RxUIKit;
@@ -130,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11431057217A2400007C0E1A /* RxUIKit.h in Headers */,
+				11AA9B97219D9223007B5ADF /* MultipleDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +172,7 @@
 				TargetAttributes = {
 					11431051217A2400007C0E1A = {
 						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -201,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11AA9B96219D9223007B5ADF /* MultipleDelegate.m in Sources */,
 				11431066217A240F007C0E1A /* UIViewController+Rx.swift in Sources */,
 				11431073217A244B007C0E1A /* RxPageViewControllerDataSourceType.swift in Sources */,
 				1143106F217A2436007C0E1A /* RxPageViewControllerDataSource.swift in Sources */,
