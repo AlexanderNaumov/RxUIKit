@@ -64,11 +64,11 @@ extension Reactive where Base: UIViewController {
         return RxViewControllerTransitioningDelegateProxy.proxy(for: base)
     }
     
-    public func setDelegate(_ delegate: UIViewControllerTransitioningDelegate) -> Disposable {
+    public func setTransitioningDelegate(_ delegate: UIViewControllerTransitioningDelegate) -> Disposable {
         return RxViewControllerTransitioningDelegateProxy.installForwardDelegate(delegate, retainDelegate: false, onProxyForObject: base)
     }
     
-    public func setRetainDelegate(_ delegate: UIViewControllerTransitioningDelegate) -> Disposable {
+    public func setRetainTransitioningDelegate(_ delegate: UIViewControllerTransitioningDelegate) -> Disposable {
         return RxViewControllerTransitioningDelegateProxy.installForwardDelegate(delegate, retainDelegate: true, onProxyForObject: base)
     }
     
