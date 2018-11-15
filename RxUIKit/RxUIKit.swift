@@ -71,24 +71,3 @@ func bindingError(_ error: Swift.Error) {
         print(error)
     #endif
 }
-
-public class DisposeOnDealloc {
-    private var disposables: [Disposable] = []
-    
-    public init(_ deallocated: Observable<Void>) {
-        _ = deallocated.subscribe(onDisposed: {
-            self.disposables.forEach { $0.dispose() }
-            self.disposables.removeAll()
-        })
-    }
-    
-    public func insert(_ disposable: Disposable) {
-        disposables.append(disposable)
-    }
-}
-
-extension Disposable {
-    public func disposed(by deiniter: DisposeOnDealloc) {
-        deiniter.insert(self)
-    }
-}

@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 
 extension Reactive where Base: UIViewController {
+    
     public var loadView: ControlEvent<Void> {
         let source = self.methodInvoked(#selector(Base.loadView)).map { _ in }
         return ControlEvent(events: source)
@@ -56,4 +57,19 @@ extension Reactive where Base: UIViewController {
         let source = self.methodInvoked(#selector(Base.didMove)).map { $0.first as? UIViewController }
         return ControlEvent(events: source)
     }
+}
+
+extension Reactive where Base: UIViewController {
+    public var transitioningDelegate: DelegateProxy<UIViewController, UIViewControllerTransitioningDelegate> {
+        return RxViewControllerTransitioningDelegateProxy.proxy(for: base)
+    }
+    
+    public func setDelegate(_ delegate: UIViewControllerTransitioningDelegate) -> Disposable {
+        return RxViewControllerTransitioningDelegateProxy.installForwardDelegate(delegate, retainDelegate: false, onProxyForObject: base)
+    }
+    
+    public func setRetainDelegate(_ delegate: UIViewControllerTransitioningDelegate) -> Disposable {
+        return RxViewControllerTransitioningDelegateProxy.installForwardDelegate(delegate, retainDelegate: true, onProxyForObject: base)
+    }
+    
 }
