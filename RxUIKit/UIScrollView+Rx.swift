@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-extension Reactive where Base: UICollectionView {
+extension Reactive where Base: UIScrollView {
     public func setRetainDelegate(_ delegate: UIScrollViewDelegate) -> Disposable {
         return RxScrollViewDelegateProxy.installForwardDelegate(delegate, retainDelegate: true, onProxyForObject: base)
     }
