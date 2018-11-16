@@ -29,6 +29,8 @@
 		11C8853B219DF8F200133696 /* DelegateProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8853A219DF8F200133696 /* DelegateProxyType.swift */; };
 		11C8853E219DF99300133696 /* DisposeOnDealloc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8853D219DF99300133696 /* DisposeOnDealloc.swift */; };
 		11C88540219DF9FB00133696 /* RxViewControllerTransitioningDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8853F219DF9FB00133696 /* RxViewControllerTransitioningDelegateProxy.swift */; };
+		11C8854A219F224700133696 /* RxMapViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C88549219F224700133696 /* RxMapViewDelegateProxy.swift */; };
+		11C8854C219F229300133696 /* MKMapView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8854B219F229300133696 /* MKMapView+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		11C8853A219DF8F200133696 /* DelegateProxyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateProxyType.swift; sourceTree = "<group>"; };
 		11C8853D219DF99300133696 /* DisposeOnDealloc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeOnDealloc.swift; sourceTree = "<group>"; };
 		11C8853F219DF9FB00133696 /* RxViewControllerTransitioningDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxViewControllerTransitioningDelegateProxy.swift; sourceTree = "<group>"; };
+		11C88549219F224700133696 /* RxMapViewDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMapViewDelegateProxy.swift; sourceTree = "<group>"; };
+		11C8854B219F229300133696 /* MKMapView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 				11AA9B8E219C98AB007B5ADF /* UIScrollView+Rx.swift */,
 				11BD7791219DDC87002269F1 /* UITextField+Rx.swift */,
 				1143105F217A240F007C0E1A /* UIViewController+Rx.swift */,
+				11C8854B219F229300133696 /* MKMapView+Rx.swift */,
 				11AA9B95219D9223007B5ADF /* MultipleDelegate.h */,
 				11AA9B94219D9223007B5ADF /* MultipleDelegate.m */,
 				11431056217A2400007C0E1A /* Info.plist */,
@@ -135,6 +140,7 @@
 				11BD7793219DDDAA002269F1 /* RxAdaptivePresentationControllerDelegateProxy.swift */,
 				11C8853F219DF9FB00133696 /* RxViewControllerTransitioningDelegateProxy.swift */,
 				11BD778F219DDC12002269F1 /* RxTextFieldDelegateProxy.swift */,
+				11C88549219F224700133696 /* RxMapViewDelegateProxy.swift */,
 			);
 			path = Proxies;
 			sourceTree = "<group>";
@@ -246,12 +252,14 @@
 				11BD7792219DDC87002269F1 /* UITextField+Rx.swift in Sources */,
 				11BD7794219DDDAA002269F1 /* RxAdaptivePresentationControllerDelegateProxy.swift in Sources */,
 				11431070217A2436007C0E1A /* RxTableViewDataSource.swift in Sources */,
+				11C8854C219F229300133696 /* MKMapView+Rx.swift in Sources */,
 				11BD7790219DDC12002269F1 /* RxTextFieldDelegateProxy.swift in Sources */,
 				11431064217A240F007C0E1A /* UITableView+Rx.swift in Sources */,
 				1143107D217A24A6007C0E1A /* RxPageViewControllerDataSourceProxy.swift in Sources */,
 				11C88540219DF9FB00133696 /* RxViewControllerTransitioningDelegateProxy.swift in Sources */,
 				1143107C217A24A6007C0E1A /* RxPageViewControllerDelegateProxy.swift in Sources */,
 				11431068217A240F007C0E1A /* RxUIKit.swift in Sources */,
+				11C8854A219F224700133696 /* RxMapViewDelegateProxy.swift in Sources */,
 				1143106A217A240F007C0E1A /* UIPageViewController+Rx.swift in Sources */,
 				11C8853E219DF99300133696 /* DisposeOnDealloc.swift in Sources */,
 				11AA9B8F219C98AB007B5ADF /* UIScrollView+Rx.swift in Sources */,
