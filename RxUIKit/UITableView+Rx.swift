@@ -28,4 +28,19 @@ extension Reactive where Base: UITableView {
                 }
             }
     }
+    
+    public func staticCells<O: ObservableType, V: Any>()
+        -> (_ source: O)
+        -> (_ newCell: @escaping (IndexPath, V) -> UITableViewCell)
+        -> Disposable
+        where O.E == ([[Int]], V) {
+            return { source in
+                return { newCell in
+                    let dataSource = RxTableViewStaticDataSource<V> { (_, i, v) in
+                        newCell(i, v)
+                    }
+                    return self.items(dataSource: dataSource)(source)
+                }
+            }
+    }
 }

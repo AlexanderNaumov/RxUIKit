@@ -58,3 +58,46 @@ open class RxTableViewDataSource<S: Sequence>: NSObject, UITableViewDataSource, 
         }.on(observedEvent)
     }
 }
+
+
+open class RxTableViewStaticDataSource<V: Any>: NSObject, UITableViewDataSource, RxTableViewDataSourceType {
+    
+    private var cells: [IndexPath: UITableViewCell] = [:]
+    private var value: V!
+    
+    typealias CellFactory = (UITableView, IndexPath, V) -> UITableViewCell
+    
+    let cellFactory: CellFactory
+    
+    private var sections: [[Int]] = []
+    
+    init(cellFactory: @escaping CellFactory) {
+        self.cellFactory = cellFactory
+    }
+    
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sections[section].count
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell! = cells[indexPath]
+        if cell == nil {
+            cell = cellFactory(tableView, indexPath, value)
+            cells[indexPath] = cell
+        }
+        return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, observedEvent: RxSwift.Event<([[Int]], V)>) {
+        Binder(self) { `self`, item in
+            self.sections = item.0
+            self.value = item.1
+            self.cells.removeAll()
+            tableView.reloadData()
+            }.on(observedEvent)
+    }
+}

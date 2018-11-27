@@ -43,4 +43,10 @@ extension Reactive where Base: MKMapView {
         }
         return ControlEvent(events: source)
     }
+    
+    public var isUserLocationVisible: Binder<Bool> {
+        return Binder(base) { control, value in
+            control.showsUserLocation = value
+        }
+    }
 }
