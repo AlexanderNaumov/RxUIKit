@@ -11,16 +11,34 @@ import RxSwift
 import RxCocoa
 
 extension Reactive where Base: UITableView {
-    public func eventItems<S: Sequence, Cell: UITableViewCell, O: ObservableType>
+    public func eventItems<C: Collection, Cell: UITableViewCell, O: ObservableType>
         (cellIdentifier: String, cellType: Cell.Type = Cell.self)
         -> (_ source: O)
-        -> (_ configureCell: @escaping (Int, S.Element, Cell) -> Void)
+        -> (_ configureCell: @escaping (IndexPath, C.Element, Cell) -> Void)
         -> Disposable
-        where O.E == RxTableEventContainer<S> {
+        where C.Index == Int, O.E == RxTableEventContainer<C> {
             return { source in
                 return { configureCell in
-                    let dataSource = RxTableViewDataSource<S> { (tv, i, item) in
-                        let cell = tv.dequeueReusableCell(withIdentifier: cellIdentifier, for: IndexPath(row: i, section: 0)) as! Cell
+                    let dataSource = RxTableViewDataSource<C> { (tv, i, item) in
+                        let cell = tv.dequeueReusableCell(withIdentifier: cellIdentifier, for: i) as! Cell
+                        configureCell(i, item, cell)
+                        return cell
+                    }
+                    return self.items(dataSource: dataSource)(source)
+                }
+            }
+    }
+    
+    public func sectionedItems<C: Collection, Cell: UITableViewCell, O: ObservableType>
+        (cellIdentifier: String, cellType: Cell.Type = Cell.self)
+        -> (_ source: O)
+        -> (_ configureCell: @escaping (IndexPath, C.Element, Cell) -> Void)
+        -> Disposable
+        where C.Index == Int, C.Element: Collection, O.E == RxTableEventContainer<C> {
+            return { source in
+                return { configureCell in
+                    let dataSource = RxTableViewSectionedDataSource<C> { (tv, i, item) in
+                        let cell = tv.dequeueReusableCell(withIdentifier: cellIdentifier, for: i) as! Cell
                         configureCell(i, item, cell)
                         return cell
                     }

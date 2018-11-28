@@ -10,24 +10,25 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-public struct RxTableEventContainer<S: Sequence> {
+public struct RxTableEventContainer<C: Collection> {
     public enum RxTableViewEvent {
-        case insert([Int])
+        case insert([IndexPath])
+        case update([IndexPath])
         case reload
     }
     public var event: RxTableViewEvent
-    public var items: S
-    public init(event: RxTableViewEvent, items: S) {
+    public var items: C
+    public init(event: RxTableViewEvent, items: C) {
         self.event = event
         self.items = items
     }
 }
 
-open class RxTableViewDataSource<S: Sequence>: NSObject, UITableViewDataSource, RxTableViewDataSourceType {
+open class RxTableViewCollectionDataSource<C: Collection>: NSObject, RxTableViewDataSourceType where C.Index == Int {
     
-    private var items: [S.Element] = []
+    internal var items: C!
     
-    typealias CellFactory = (UITableView, Int, S.Element) -> UITableViewCell
+    typealias CellFactory = (UITableView, IndexPath, C.Element) -> UITableViewCell
     
     let cellFactory: CellFactory
     
@@ -35,30 +36,68 @@ open class RxTableViewDataSource<S: Sequence>: NSObject, UITableViewDataSource, 
         self.cellFactory = cellFactory
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return cellFactory(tableView, indexPath.row, items[indexPath.row])
-    }
-    
-    public func tableView(_ tableView: UITableView, observedEvent: RxSwift.Event<RxTableEventContainer<S>>) {
+    public func tableView(_ tableView: UITableView, observedEvent: RxSwift.Event<RxTableEventContainer<C>>) {
         Binder(self) { `self`, container in
             switch container.event {
-            case let .insert(indexes) where !self.items.isEmpty:
-                self.items = container.items as! [S.Element]
-                tableView.insertRows(at: indexes.map { [0, $0] }, with: .none)
+            case let .insert(i) where !self.items.isEmpty:
+                self.items = container.items
+                tableView.insertRows(at: i, with: .none)
+            case let .update(i):
+                self.items = container.items
+                tableView.reloadRows(at: i, with: .none)
             case .reload:
                 fallthrough
             default:
-                self.items = container.items as! [S.Element]
+                self.items = container.items
                 tableView.reloadData()
             }
         }.on(observedEvent)
     }
 }
 
+open class RxTableViewDataSource<C: Collection>: RxTableViewCollectionDataSource<C>, UITableViewDataSource where C.Index == Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items?.count ?? 0
+    }
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return cellFactory(tableView, indexPath, items[indexPath.row])
+    }
+}
+
+public struct RxTableViewSectionedItem<C: Collection>: RxTableViewSectionedItemType, Sequence, Collection where C.Index == Int {
+    public let title: String
+    public let items: C
+    public init(title: String, items: C) { self.title = title; self.items = items }
+    
+    public func index(after i: Int) -> Int {
+        return items.index(after: i)
+    }
+    public subscript(position: Int) -> C.Element {
+        return items[position]
+    }
+    public var startIndex: Int {
+        return items.startIndex
+    }
+    public var endIndex: Int {
+        return items.endIndex
+    }
+}
+
+open class RxTableViewSectionedDataSource<C: Collection>: RxTableViewCollectionDataSource<C>, UITableViewDataSource where C.Index == Int, C.Element: Collection {
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return items?.count ?? 0
+    }
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items?[section].count ?? 0
+    }
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return cellFactory(tableView, indexPath, items[indexPath.row])
+    }
+    public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return C.Element.self is RxTableViewSectionedItemType ?
+            (items[section] as! RxTableViewSectionedItemType).title : nil
+    }
+}
 
 open class RxTableViewStaticDataSource<V: Any>: NSObject, UITableViewDataSource, RxTableViewDataSourceType {
     
