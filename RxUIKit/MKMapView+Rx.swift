@@ -23,6 +23,12 @@ extension Reactive where Base: MKMapView {
         return RxMapViewDelegateProxy.installForwardDelegate(delegate, retainDelegate: true, onProxyForObject: base)
     }
     
+    public func setRetainDelegates(_ delegates: [MKMapViewDelegate]) -> Disposable {
+        let delegate = MultipleDelegate<MKMapViewDelegate>()!
+        delegates.forEach(delegate.addDelegate)
+        return setRetainDelegate(delegate.delegate)
+    }
+    
     public var didUpdateUserLocation: ControlEvent<MKUserLocation> {
         let source = delegate.methodInvoked(#selector(MKMapViewDelegate.mapView(_:didUpdate:))).map {
             return try castOrThrow(MKUserLocation.self, $0[1])

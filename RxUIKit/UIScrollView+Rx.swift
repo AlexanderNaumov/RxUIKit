@@ -14,4 +14,9 @@ extension Reactive where Base: UIScrollView {
     public func setRetainDelegate(_ delegate: UIScrollViewDelegate) -> Disposable {
         return RxScrollViewDelegateProxy.installForwardDelegate(delegate, retainDelegate: true, onProxyForObject: base)
     }
+    public func setRetainDelegates(_ delegates: [UIScrollViewDelegate]) -> Disposable {
+        let delegate = MultipleDelegate<UIScrollViewDelegate>()!
+        delegates.forEach(delegate.addDelegate)
+        return setRetainDelegate(delegate.delegate)
+    }
 }

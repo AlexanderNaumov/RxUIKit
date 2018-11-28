@@ -22,4 +22,9 @@ extension Reactive where Base: UITextField {
     public func setRetainDelegate(_ delegate: UITextFieldDelegate) -> Disposable {
         return RxTextFieldDelegateProxy.installForwardDelegate(delegate, retainDelegate: true, onProxyForObject: base)
     }
+    public func setRetainDelegates(_ delegates: [UITextFieldDelegate]) -> Disposable {
+        let delegate = MultipleDelegate<UITextFieldDelegate>()!
+        delegates.forEach(delegate.addDelegate)
+        return setRetainDelegate(delegate.delegate)
+    }
 }

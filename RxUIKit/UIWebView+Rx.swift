@@ -18,4 +18,9 @@ extension Reactive where Base: UIWebView {
     public func setRetainDelegate(_ delegate: UIWebViewDelegate) -> Disposable {
         return RxWebViewDelegateProxy.installForwardDelegate(delegate, retainDelegate: true, onProxyForObject: base)
     }
+    public func setRetainDelegates(_ delegates: [UIWebViewDelegate]) -> Disposable {
+        let delegate = MultipleDelegate<UIWebViewDelegate>()!
+        delegates.forEach(delegate.addDelegate)
+        return setRetainDelegate(delegate.delegate)
+    }
 }
