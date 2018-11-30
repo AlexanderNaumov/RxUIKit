@@ -32,9 +32,9 @@ extension Reactive where Base: UITableView {
     public func sectionedItems<C: Collection, Cell: UITableViewCell, O: ObservableType>
         (cellIdentifier: String, cellType: Cell.Type = Cell.self)
         -> (_ source: O)
-        -> (_ configureCell: @escaping (IndexPath, C.Element, Cell) -> Void)
+        -> (_ configureCell: @escaping (IndexPath, C.Element.Element, Cell) -> Void)
         -> Disposable
-        where C.Index == Int, C.Element: Collection, O.E == RxTableEventContainer<C> {
+        where C.Index == Int, C.Element: Collection, C.Element.Index == Int, O.E == RxTableEventContainer<C> {
             return { source in
                 return { configureCell in
                     let dataSource = RxTableViewSectionedDataSource<C> { (tv, i, item) in

@@ -24,11 +24,11 @@ public struct RxTableEventContainer<C: Collection> {
     }
 }
 
-open class RxTableViewCollectionDataSource<C: Collection>: NSObject, RxTableViewDataSourceType where C.Index == Int {
+open class RxTableViewCollectionDataSource<C: Collection, E>: NSObject, RxTableViewDataSourceType where C.Index == Int {
     
     internal var items: C!
     
-    typealias CellFactory = (UITableView, IndexPath, C.Element) -> UITableViewCell
+    typealias CellFactory = (UITableView, IndexPath, E) -> UITableViewCell
     
     let cellFactory: CellFactory
     
@@ -55,7 +55,7 @@ open class RxTableViewCollectionDataSource<C: Collection>: NSObject, RxTableView
     }
 }
 
-open class RxTableViewDataSource<C: Collection>: RxTableViewCollectionDataSource<C>, UITableViewDataSource where C.Index == Int {
+open class RxTableViewDataSource<C: Collection>: RxTableViewCollectionDataSource<C, C.Element>, UITableViewDataSource where C.Index == Int {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items?.count ?? 0
     }
@@ -83,7 +83,7 @@ public struct RxTableViewSectionedItem<C: Collection>: RxTableViewSectionedItemT
     }
 }
 
-open class RxTableViewSectionedDataSource<C: Collection>: RxTableViewCollectionDataSource<C>, UITableViewDataSource where C.Index == Int, C.Element: Collection {
+open class RxTableViewSectionedDataSource<C: Collection>: RxTableViewCollectionDataSource<C, C.Element.Element>, UITableViewDataSource where C.Index == Int, C.Element: Collection, C.Element.Index == Int {
     public func numberOfSections(in tableView: UITableView) -> Int {
         return items?.count ?? 0
     }
@@ -91,9 +91,9 @@ open class RxTableViewSectionedDataSource<C: Collection>: RxTableViewCollectionD
         return items?[section].count ?? 0
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return cellFactory(tableView, indexPath, items[indexPath.row])
+        return cellFactory(tableView, indexPath, items[indexPath.section][indexPath.row])
     }
-    public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return C.Element.self is RxTableViewSectionedItemType ?
             (items[section] as! RxTableViewSectionedItemType).title : nil
     }
