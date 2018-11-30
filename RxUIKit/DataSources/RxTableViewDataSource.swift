@@ -94,8 +94,7 @@ open class RxTableViewSectionedDataSource<C: Collection>: RxTableViewCollectionD
         return cellFactory(tableView, indexPath, items[indexPath.section][indexPath.row])
     }
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return C.Element.self is RxTableViewSectionedItemType ?
-            (items[section] as! RxTableViewSectionedItemType).title : nil
+        return (items as? [RxTableViewSectionedItemType])?[section].title
     }
 }
 
