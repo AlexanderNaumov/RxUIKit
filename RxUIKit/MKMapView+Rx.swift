@@ -49,10 +49,10 @@ extension Reactive where Base: MKMapView {
         }
         return ControlEvent(events: source)
     }
-    // mapView(_ mapView: MKMapView, didChange mode: MKUserTrackingMode, animated: Bool)
+    
     public var didChangeUserTrackingMode: ControlEvent<(mode: MKUserTrackingMode, animated: Bool)> {
         let source = delegate.methodInvoked(#selector(MKMapViewDelegate.mapView(_:didChange:animated:))).map {
-            return (mode: try castOrThrow(MKUserTrackingMode.self, $0[1]), animated: try castOrThrow(Bool.self, $0[2]))
+            return (mode: MKUserTrackingMode(rawValue: try castOrThrow(Int.self, $0[1]))!, animated: try castOrThrow(Bool.self, $0[2]))
         }
         return ControlEvent(events: source)
     }
