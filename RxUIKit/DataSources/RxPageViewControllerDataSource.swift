@@ -21,8 +21,6 @@ open class RxPageViewControllerDataSource<S: Sequence>: NSObject, UIPageViewCont
     internal var items: [S.Element] = []
     internal var configureViewController: ConfigureViewController
     
-    private lazy var viewControllers = NSMapTable<NSNumber, UIViewController>.weakToStrongObjects()
-    
     init(configureViewController: @escaping ConfigureViewController) {
         self.configureViewController = configureViewController
     }
