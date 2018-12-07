@@ -64,25 +64,6 @@ open class RxTableViewDataSource<C: Collection>: RxTableViewCollectionDataSource
     }
 }
 
-public struct RxTableViewSectionedItem<C: Collection>: RxTableViewSectionedItemType, Sequence, Collection where C.Index == Int {
-    public let title: String
-    public let items: C
-    public init(title: String, items: C) { self.title = title; self.items = items }
-    
-    public func index(after i: Int) -> Int {
-        return items.index(after: i)
-    }
-    public subscript(position: Int) -> C.Element {
-        return items[position]
-    }
-    public var startIndex: Int {
-        return items.startIndex
-    }
-    public var endIndex: Int {
-        return items.endIndex
-    }
-}
-
 open class RxTableViewSectionedDataSource<C: Collection>: RxTableViewCollectionDataSource<C, C.Element.Element>, UITableViewDataSource where C.Index == Int, C.Element: Collection, C.Element.Index == Int {
     public func numberOfSections(in tableView: UITableView) -> Int {
         return items?.count ?? 0
@@ -94,7 +75,7 @@ open class RxTableViewSectionedDataSource<C: Collection>: RxTableViewCollectionD
         return cellFactory(tableView, indexPath, items[indexPath.section][indexPath.row])
     }
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return (items as? [RxTableViewSectionedItemType])?[section].title
+        return (items as? [RxSectionedItemType])?[section].title
     }
 }
 

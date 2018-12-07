@@ -21,7 +21,7 @@
 		11431082217A2557007C0E1A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11431080217A2557007C0E1A /* RxSwift.framework */; };
 		11465B1E21B7E89A00470B71 /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11465B1D21B7E89A00470B71 /* UINavigationController+Rx.swift */; };
 		11465B2421B7EEEC00470B71 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11465B2321B7EEEC00470B71 /* UIView+Rx.swift */; };
-		118C253F21AF0B1C00C38222 /* RxTableViewSectionedItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C253E21AF0B1C00C38222 /* RxTableViewSectionedItemType.swift */; };
+		118C253F21AF0B1C00C38222 /* RxSectionedItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C253E21AF0B1C00C38222 /* RxSectionedItemType.swift */; };
 		11AA9B8F219C98AB007B5ADF /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AA9B8E219C98AB007B5ADF /* UIScrollView+Rx.swift */; };
 		11AA9B96219D9223007B5ADF /* MultipleDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AA9B94219D9223007B5ADF /* MultipleDelegate.m */; };
 		11AA9B97219D9223007B5ADF /* MultipleDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 11AA9B95219D9223007B5ADF /* MultipleDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +29,7 @@
 		11BD7792219DDC87002269F1 /* UITextField+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BD7791219DDC87002269F1 /* UITextField+Rx.swift */; };
 		11BD7794219DDDAA002269F1 /* RxAdaptivePresentationControllerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BD7793219DDDAA002269F1 /* RxAdaptivePresentationControllerDelegateProxy.swift */; };
 		11BD7796219DDDFC002269F1 /* UIPresentationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BD7795219DDDFC002269F1 /* UIPresentationController+Rx.swift */; };
+		11C2032F21BAB68C0096892C /* RxSectionedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C2032E21BAB68C0096892C /* RxSectionedItem.swift */; };
 		11C8853B219DF8F200133696 /* DelegateProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8853A219DF8F200133696 /* DelegateProxyType.swift */; };
 		11C8853E219DF99300133696 /* DisposeOnDealloc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8853D219DF99300133696 /* DisposeOnDealloc.swift */; };
 		11C88540219DF9FB00133696 /* RxViewControllerTransitioningDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8853F219DF9FB00133696 /* RxViewControllerTransitioningDelegateProxy.swift */; };
@@ -54,7 +55,7 @@
 		11431080217A2557007C0E1A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		11465B1D21B7E89A00470B71 /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Rx.swift"; sourceTree = "<group>"; };
 		11465B2321B7EEEC00470B71 /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
-		118C253E21AF0B1C00C38222 /* RxTableViewSectionedItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTableViewSectionedItemType.swift; sourceTree = "<group>"; };
+		118C253E21AF0B1C00C38222 /* RxSectionedItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSectionedItemType.swift; sourceTree = "<group>"; };
 		11AA9B8E219C98AB007B5ADF /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
 		11AA9B94219D9223007B5ADF /* MultipleDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleDelegate.m; sourceTree = "<group>"; };
 		11AA9B95219D9223007B5ADF /* MultipleDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleDelegate.h; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		11BD7791219DDC87002269F1 /* UITextField+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Rx.swift"; sourceTree = "<group>"; };
 		11BD7793219DDDAA002269F1 /* RxAdaptivePresentationControllerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAdaptivePresentationControllerDelegateProxy.swift; sourceTree = "<group>"; };
 		11BD7795219DDDFC002269F1 /* UIPresentationController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPresentationController+Rx.swift"; sourceTree = "<group>"; };
+		11C2032E21BAB68C0096892C /* RxSectionedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSectionedItem.swift; sourceTree = "<group>"; };
 		11C8853A219DF8F200133696 /* DelegateProxyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateProxyType.swift; sourceTree = "<group>"; };
 		11C8853D219DF99300133696 /* DisposeOnDealloc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeOnDealloc.swift; sourceTree = "<group>"; };
 		11C8853F219DF9FB00133696 /* RxViewControllerTransitioningDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxViewControllerTransitioningDelegateProxy.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				1143106D217A2435007C0E1A /* RxPageViewControllerDataSource.swift */,
 				1143106E217A2435007C0E1A /* RxTableViewDataSource.swift */,
+				11C2032E21BAB68C0096892C /* RxSectionedItem.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -139,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				11431072217A244B007C0E1A /* RxPageViewControllerDataSourceType.swift */,
-				118C253E21AF0B1C00C38222 /* RxTableViewSectionedItemType.swift */,
+				118C253E21AF0B1C00C38222 /* RxSectionedItemType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -256,7 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11AA9B96219D9223007B5ADF /* MultipleDelegate.m in Sources */,
-				118C253F21AF0B1C00C38222 /* RxTableViewSectionedItemType.swift in Sources */,
+				118C253F21AF0B1C00C38222 /* RxSectionedItemType.swift in Sources */,
 				11C8853B219DF8F200133696 /* DelegateProxyType.swift in Sources */,
 				11BD7796219DDDFC002269F1 /* UIPresentationController+Rx.swift in Sources */,
 				11431066217A240F007C0E1A /* UIViewController+Rx.swift in Sources */,
@@ -278,6 +281,7 @@
 				11C8854A219F224700133696 /* RxMapViewDelegateProxy.swift in Sources */,
 				1143106A217A240F007C0E1A /* UIPageViewController+Rx.swift in Sources */,
 				11C8853E219DF99300133696 /* DisposeOnDealloc.swift in Sources */,
+				11C2032F21BAB68C0096892C /* RxSectionedItem.swift in Sources */,
 				11AA9B8F219C98AB007B5ADF /* UIScrollView+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
