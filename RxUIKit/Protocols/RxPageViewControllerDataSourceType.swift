@@ -12,5 +12,5 @@ import RxSwift
 public protocol RxPageViewControllerDataSourceType {
     associatedtype Element
     func pageViewController(_ pageViewController: UIPageViewController, observedEvent: RxSwift.Event<Element>)
-    func pageViewController(_ pageViewController: UIPageViewController, setViewControllerAt index: Int, direction: UIPageViewController.NavigationDirection, animated: Bool)
+    func pageViewController(_ pageViewController: UIPageViewController, setViewControllerAt index: PageIndex, direction: UIPageViewController.NavigationDirection, animated: Bool)
 }

@@ -33,8 +33,8 @@ open class RxPageViewControllerDataSource<S: Sequence>: NSObject, UIPageViewCont
         return nil
     }
     
-    public func pageViewController(_ pageViewController: UIPageViewController, setViewControllerAt index: Int, direction: UIPageViewController.NavigationDirection, animated: Bool) {
-        let vc = configureViewController(pageViewController, index, items[index])
+    public func pageViewController(_ pageViewController: UIPageViewController, setViewControllerAt index: PageIndex, direction: UIPageViewController.NavigationDirection, animated: Bool) {
+        let vc = configureViewController(pageViewController, Int(index), items[Int(index)])
         pageViewController.set(controller: vc, at: index)
         pageViewController.setViewControllers([vc], direction: direction, animated: animated)
     }
@@ -52,7 +52,7 @@ open class RxPageViewControllerArrayDataSource<S: Sequence>: RxPageViewControlle
     public override func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard var index = pageViewController.index(of: viewController), index < items.count - 1 else { return nil }
         index += 1
-        let vc = configureViewController(pageViewController, index, items[index])
+        let vc = configureViewController(pageViewController, Int(index), items[Int(index)])
         pageViewController.set(controller: vc, at: index)
         return vc
     }
@@ -60,7 +60,7 @@ open class RxPageViewControllerArrayDataSource<S: Sequence>: RxPageViewControlle
     public override func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard var index = pageViewController.index(of: viewController), index > 0 else { return nil }
         index -= 1
-        let vc = configureViewController(pageViewController, index, items[index])
+        let vc = configureViewController(pageViewController, Int(index), items[Int(index)])
         pageViewController.set(controller: vc, at: index)
         return vc
     }
@@ -71,7 +71,7 @@ open class RxPageViewControllerLoopDataSource<S: Sequence>: RxPageViewController
         guard var index = pageViewController.index(of: viewController), items.count > 1 else { return nil }
         index += 1
         if index >= items.count { index = 0 }
-        let vc = configureViewController(pageViewController, index, items[index])
+        let vc = configureViewController(pageViewController, Int(index), items[Int(index)])
         pageViewController.set(controller: vc, at: index)
         return vc
     }
@@ -79,8 +79,8 @@ open class RxPageViewControllerLoopDataSource<S: Sequence>: RxPageViewController
     public override func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard var index = pageViewController.index(of: viewController), items.count > 1 else { return nil }
         index -= 1
-        if index < 0 { index = items.count - 1 }
-        let vc = configureViewController(pageViewController, index, items[index])
+        if index < 0 { index = PageIndex(items.count - 1) }
+        let vc = configureViewController(pageViewController, Int(index), items[Int(index)])
         pageViewController.set(controller: vc, at: index)
         return vc
     }

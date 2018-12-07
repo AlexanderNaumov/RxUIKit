@@ -12,10 +12,10 @@ import RxCocoa
 
 extension Reactive where Base: UIPageViewController {
     
-    public var setViewController: ControlEvent<(at: Int, direction: UIPageViewController.NavigationDirection, animated: Bool)> {
+    public var setViewController: ControlEvent<(at: PageIndex, direction: UIPageViewController.NavigationDirection, animated: Bool)> {
         let source = self.methodInvoked(#selector(Base.setViewController(at:direction:animated:))).map {
-            a -> (at: Int, direction: UIPageViewController.NavigationDirection, animated: Bool) in
-            let index = try castOrThrow(Int.self, a[0])
+            a -> (at: PageIndex, direction: UIPageViewController.NavigationDirection, animated: Bool) in
+            let index = try castOrThrow(PageIndex.self, a[0])
             let direction = UIPageViewController.NavigationDirection(rawValue: try castOrThrow(Int.self, a[1]))!
             let animated = try castOrThrow(Bool.self, a[2])
             return (index, direction, animated)
@@ -86,11 +86,13 @@ extension Reactive where Base: UIPageViewController {
     }
 }
 
+public typealias PageIndex = Int64
+
 extension UIPageViewController {
     
     private class IndexContainer: NSObject, NSCopying {
-        let index: Int
-        init(index: Int) {
+        let index: PageIndex
+        init(index: PageIndex) {
             self.index = index
             super.init()
         }
@@ -108,19 +110,19 @@ extension UIPageViewController {
         set { objc_setAssociatedObject(self, &AssociatedKeys.controllers, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
     
-    public func set(controller: UIViewController, at index: Int) {
+    public func set(controller: UIViewController, at index: PageIndex) {
         if _controllers == nil { _controllers = NSMapTable.strongToWeakObjects() }
         _controllers!.setObject(controller, forKey: IndexContainer(index: index))
     }
     
-    public func index(of viewController: UIViewController) -> Int? {
+    public func index(of viewController: UIViewController) -> PageIndex? {
         let controllers = _controllers?.dictionaryRepresentation() as? [IndexContainer: UIViewController]
         return controllers?.first { $0.value == viewController }?.key.index
     }
     
-    public var firstIndex: Int? {
+    public var firstIndex: PageIndex? {
         return viewControllers?.first.flatMap(index)
     }
     
-    @objc public func setViewController(at index: Int, direction: UIPageViewController.NavigationDirection = .forward, animated: Bool = false) {}
+    @objc public func setViewController(at index: PageIndex, direction: UIPageViewController.NavigationDirection = .forward, animated: Bool = false) {}
 }
