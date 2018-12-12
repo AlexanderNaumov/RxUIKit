@@ -36,6 +36,7 @@
 		11C8854A219F224700133696 /* RxMapViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C88549219F224700133696 /* RxMapViewDelegateProxy.swift */; };
 		11C8854C219F229300133696 /* MKMapView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8854B219F229300133696 /* MKMapView+Rx.swift */; };
 		11C8859421A088C500133696 /* UIWebView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8859321A088C500133696 /* UIWebView+Rx.swift */; };
+		11E74C7921C1568D001CCCFE /* RxCollectionEventContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E74C7821C1568D001CCCFE /* RxCollectionEventContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		11C88549219F224700133696 /* RxMapViewDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMapViewDelegateProxy.swift; sourceTree = "<group>"; };
 		11C8854B219F229300133696 /* MKMapView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Rx.swift"; sourceTree = "<group>"; };
 		11C8859321A088C500133696 /* UIWebView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWebView+Rx.swift"; sourceTree = "<group>"; };
+		11E74C7821C1568D001CCCFE /* RxCollectionEventContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCollectionEventContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				1143106D217A2435007C0E1A /* RxPageViewControllerDataSource.swift */,
 				1143106E217A2435007C0E1A /* RxTableViewDataSource.swift */,
 				11C2032E21BAB68C0096892C /* RxSectionedItem.swift */,
+				11E74C7821C1568D001CCCFE /* RxCollectionEventContainer.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				11431073217A244B007C0E1A /* RxPageViewControllerDataSourceType.swift in Sources */,
 				1143106F217A2436007C0E1A /* RxPageViewControllerDataSource.swift in Sources */,
 				11BD7792219DDC87002269F1 /* UITextField+Rx.swift in Sources */,
+				11E74C7921C1568D001CCCFE /* RxCollectionEventContainer.swift in Sources */,
 				11465B2421B7EEEC00470B71 /* UIView+Rx.swift in Sources */,
 				11465B1E21B7E89A00470B71 /* UINavigationController+Rx.swift in Sources */,
 				11BD7794219DDDAA002269F1 /* RxAdaptivePresentationControllerDelegateProxy.swift in Sources */,

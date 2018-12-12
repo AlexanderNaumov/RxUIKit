@@ -16,7 +16,7 @@ extension Reactive where Base: UITableView {
         -> (_ source: O)
         -> (_ configureCell: @escaping (IndexPath, C.Element, Cell) -> Void)
         -> Disposable
-        where C.Index == Int, O.E == RxTableEventContainer<C> {
+        where C.Index == Int, O.E == RxCollectionEventContainer<C> {
             return { source in
                 return { configureCell in
                     let dataSource = RxTableViewDataSource<C> { (tv, i, item) in
@@ -34,7 +34,7 @@ extension Reactive where Base: UITableView {
         -> (_ source: O)
         -> (_ configureCell: @escaping (IndexPath, C.Element.Element, Cell) -> Void)
         -> Disposable
-        where C.Index == Int, C.Element: Collection, C.Element.Index == Int, O.E == RxTableEventContainer<C> {
+        where C.Index == Int, C.Element: Collection, C.Element.Index == Int, O.E == RxCollectionEventContainer<C> {
             return { source in
                 return { configureCell in
                     let dataSource = RxTableViewSectionedDataSource<C> { (tv, i, item) in
@@ -47,15 +47,14 @@ extension Reactive where Base: UITableView {
             }
     }
     
-    public func staticCells<O: ObservableType, V: Any>()
+    public func staticCells<O: ObservableType>()
         -> (_ source: O)
-        -> (_ newCell: @escaping (IndexPath, V) -> UITableViewCell)
-        -> Disposable
-        where O.E == ([[Int]], V) {
+        -> (_ newCells: @escaping (O.E) -> [[UITableViewCell]])
+        -> Disposable {
             return { source in
-                return { newCell in
-                    let dataSource = RxTableViewStaticDataSource<V> { (_, i, v) in
-                        newCell(i, v)
+                return { newCells in
+                    let dataSource = RxTableViewStaticDataSource<O.E> {
+                        newCells($0)
                     }
                     return self.items(dataSource: dataSource)(source)
                 }
