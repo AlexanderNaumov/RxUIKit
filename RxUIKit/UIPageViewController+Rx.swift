@@ -102,7 +102,7 @@ extension UIPageViewController {
     }
     
     private struct AssociatedKeys {
-        static var controllers: UInt8 = 54
+        static var controllers: UInt8 = 0
     }
     
     private var _controllers: NSMapTable<IndexContainer, UIViewController>? {
