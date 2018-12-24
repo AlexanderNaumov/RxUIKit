@@ -41,7 +41,11 @@ open class RxTableViewCollectionDataSource<C: Collection, E>: NSObject, RxTableV
     }
 }
 
-open class RxTableViewDataSource<C: Collection>: RxTableViewCollectionDataSource<C, C.Element>, UITableViewDataSource where C.Index == Int {
+open class RxTableViewDataSource<C: Collection>: RxTableViewCollectionDataSource<C, C.Element>, UITableViewDataSource, SectionedViewDataSourceType where C.Index == Int {
+    public func model(at indexPath: IndexPath) throws -> Any {
+        return items[indexPath.row]
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items?.count ?? 0
     }
@@ -50,7 +54,12 @@ open class RxTableViewDataSource<C: Collection>: RxTableViewCollectionDataSource
     }
 }
 
-open class RxTableViewSectionedDataSource<C: Collection>: RxTableViewCollectionDataSource<C, C.Element.Element>, UITableViewDataSource where C.Index == Int, C.Element: Collection, C.Element.Index == Int {
+open class RxTableViewSectionedDataSource<C: Collection>: RxTableViewCollectionDataSource<C, C.Element.Element>, UITableViewDataSource, SectionedViewDataSourceType where C.Index == Int, C.Element: Collection, C.Element.Index == Int {
+    
+    public func model(at indexPath: IndexPath) throws -> Any {
+        return items[indexPath.section][indexPath.row]
+    }
+    
     public func numberOfSections(in tableView: UITableView) -> Int {
         return items?.count ?? 0
     }
@@ -93,6 +102,6 @@ open class RxTableViewStaticDataSource<V: Any>: NSObject, UITableViewDataSource,
         Binder(self) { `self`, value in
             self.cells = self.cellsFactory(value)
             tableView.reloadData()
-            }.on(observedEvent)
+        }.on(observedEvent)
     }
 }

@@ -57,6 +57,13 @@ extension Reactive where Base: MKMapView {
         return ControlEvent(events: source)
     }
     
+    public var didAddAnnotationViews: ControlEvent<[MKAnnotationView]> {
+        let source = delegate.methodInvoked(#selector((MKMapViewDelegate.mapView(_:didAdd:))! as (MKMapViewDelegate) -> (MKMapView, [MKAnnotationView]) -> Void)).map { a in
+            return try castOrThrow([MKAnnotationView].self, a[1])
+        }
+        return ControlEvent(events: source)
+    }
+    
     public var isUserLocationVisible: Binder<Bool> {
         return Binder(base) { control, value in
             control.showsUserLocation = value

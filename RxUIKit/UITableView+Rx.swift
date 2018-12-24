@@ -47,6 +47,26 @@ extension Reactive where Base: UITableView {
             }
     }
     
+    public func sectionedItems<C: Collection, O: ObservableType>()
+        -> (_ source: O)
+        -> (_ makeCell: @escaping (IndexPath, C.Element.Element, (String) -> UITableViewCell) -> Void)
+        -> Disposable
+        where C.Index == Int, C.Element: Collection, C.Element.Index == Int, O.E == RxCollectionEventContainer<C> {
+            return { source in
+                return { makeCell in
+                    let dataSource = RxTableViewSectionedDataSource<C> { (tv, i, item) in
+                        var cell: UITableViewCell!
+                        makeCell(i, item, { id in
+                            cell = tv.dequeueReusableCell(withIdentifier: id, for: i)
+                            return cell
+                        })
+                        return cell
+                    }
+                    return self.items(dataSource: dataSource)(source)
+                }
+            }
+    }
+    
     public func staticCells<O: ObservableType>()
         -> (_ source: O)
         -> (_ newCells: @escaping (O.E) -> [[UITableViewCell]])
@@ -59,5 +79,11 @@ extension Reactive where Base: UITableView {
                     return self.items(dataSource: dataSource)(source)
                 }
             }
+    }
+    
+    public var isEditing: Binder<Bool> {
+        return Binder(base) { (tableView, isEditing) in
+            tableView.setEditing(isEditing, animated: true)
+        }
     }
 }
