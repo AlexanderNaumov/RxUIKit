@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MultipleDelegate<ObjectType> : NSObject
+@interface MultipleDelegate<ObjectType> : NSProxy
 
 @property (nonatomic, readonly) ObjectType delegate;
 
