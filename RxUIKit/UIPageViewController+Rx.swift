@@ -41,7 +41,7 @@ extension Reactive where Base: UIPageViewController {
         (dataSource: DataSource)
         -> (_ source: O)
         -> Disposable
-        where O.E == DataSource.Element {
+        where O.Element == DataSource.Element {
         _ = base.rx.setViewController.takeUntil(base.rx.deallocated).bind { [weak vc = base] params in
             guard let vc = vc else { return }
             dataSource.pageViewController(vc, setViewControllerAt: params.at, direction: params.direction, animated: params.animated)
@@ -59,7 +59,7 @@ extension Reactive where Base: UIPageViewController {
         -> (_ source: O)
         -> (_ configureController: @escaping (Int, S.Element) -> UIViewController)
         -> Disposable
-        where O.E == S {
+        where O.Element == S {
             return { source in
                 return { configureController in
                     let dataSource = RxPageViewControllerArrayDataSource<S> { _, i, item in
@@ -74,7 +74,7 @@ extension Reactive where Base: UIPageViewController {
         -> (_ source: O)
         -> (_ configureController: @escaping (Int, S.Element) -> UIViewController)
         -> Disposable
-        where O.E == S {
+        where O.Element == S {
             return { source in
                 return { configureController in
                     let dataSource = RxPageViewControllerLoopDataSource<S> { _, i, item in

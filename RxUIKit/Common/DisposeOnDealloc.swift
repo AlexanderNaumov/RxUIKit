@@ -11,7 +11,7 @@ import RxSwift
 @objc public protocol BagExt {}
 
 public struct DisposeOnDealloc<B: BagExt> {
-    var reactive: Reactive<B>
+    let reactive: Reactive<B>
     public init(_ reactive: Reactive<B>) { self.reactive = reactive }
 }
 

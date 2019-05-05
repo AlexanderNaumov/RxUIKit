@@ -16,7 +16,7 @@ extension Reactive where Base: UITableView {
         -> (_ source: O)
         -> (_ configureCell: @escaping (IndexPath, C.Element, Cell) -> Void)
         -> Disposable
-        where C.Index == Int, O.E == RxCollectionEventContainer<C> {
+        where C.Index == Int, O.Element == RxCollectionEventContainer<C> {
             return { source in
                 return { configureCell in
                     let dataSource = RxTableViewDataSource<C> { (tv, i, item) in
@@ -34,7 +34,7 @@ extension Reactive where Base: UITableView {
         -> (_ source: O)
         -> (_ configureCell: @escaping (IndexPath, C.Element.Element, Cell) -> Void)
         -> Disposable
-        where C.Index == Int, C.Element: Collection, C.Element.Index == Int, O.E == RxCollectionEventContainer<C> {
+        where C.Index == Int, C.Element: Collection, C.Element.Index == Int, O.Element == RxCollectionEventContainer<C> {
             return { source in
                 return { configureCell in
                     let dataSource = RxTableViewSectionedDataSource<C> { (tv, i, item) in
@@ -51,7 +51,7 @@ extension Reactive where Base: UITableView {
         -> (_ source: O)
         -> (_ makeCell: @escaping (IndexPath, C.Element.Element, (String) -> UITableViewCell) -> Void)
         -> Disposable
-        where C.Index == Int, C.Element: Collection, C.Element.Index == Int, O.E == RxCollectionEventContainer<C> {
+        where C.Index == Int, C.Element: Collection, C.Element.Index == Int, O.Element == RxCollectionEventContainer<C> {
             return { source in
                 return { makeCell in
                     let dataSource = RxTableViewSectionedDataSource<C> { (tv, i, item) in
@@ -69,11 +69,11 @@ extension Reactive where Base: UITableView {
     
     public func staticCells<O: ObservableType>()
         -> (_ source: O)
-        -> (_ newCells: @escaping (O.E) -> [[UITableViewCell]])
+        -> (_ newCells: @escaping (O.Element) -> [[UITableViewCell]])
         -> Disposable {
             return { source in
                 return { newCells in
-                    let dataSource = RxTableViewStaticDataSource<O.E> {
+                    let dataSource = RxTableViewStaticDataSource<O.Element> {
                         newCells($0)
                     }
                     return self.items(dataSource: dataSource)(source)
