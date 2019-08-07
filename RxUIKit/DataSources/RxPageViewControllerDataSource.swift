@@ -12,7 +12,7 @@ import RxCocoa
 
 open class RxPageViewControllerDataSource<S: Sequence>: NSObject, UIPageViewControllerDataSource, RxPageViewControllerDataSourceType {
     
-    typealias ConfigureViewController = (
+    public typealias ConfigureViewController = (
         UIPageViewController?,
         Int,
         S.Element
@@ -21,7 +21,7 @@ open class RxPageViewControllerDataSource<S: Sequence>: NSObject, UIPageViewCont
     internal var items: [S.Element] = []
     internal var configureViewController: ConfigureViewController
     
-    init(configureViewController: @escaping ConfigureViewController) {
+    public init(configureViewController: @escaping ConfigureViewController) {
         self.configureViewController = configureViewController
     }
     

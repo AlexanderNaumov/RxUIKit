@@ -78,11 +78,11 @@ open class RxTableViewStaticDataSource<V: Any>: NSObject, UITableViewDataSource,
     
     private var cells: [[UITableViewCell]] = []
     
-    typealias CellsFactory = (V) -> [[UITableViewCell]]
+    public typealias CellsFactory = (V) -> [[UITableViewCell]]
     
     let cellsFactory: CellsFactory
     
-    init(cellsFactory: @escaping CellsFactory) {
+    public init(cellsFactory: @escaping CellsFactory) {
         self.cellsFactory = cellsFactory
     }
     
