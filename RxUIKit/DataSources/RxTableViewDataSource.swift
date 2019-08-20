@@ -91,6 +91,7 @@ open class RxTableViewStaticDataSource<V: Any>: NSObject, UITableViewDataSource,
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard section < cells.count else { return 0 }
         return cells[section].count
     }
     
