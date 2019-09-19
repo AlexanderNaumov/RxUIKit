@@ -35,7 +35,6 @@
 		11C88540219DF9FB00133696 /* RxViewControllerTransitioningDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8853F219DF9FB00133696 /* RxViewControllerTransitioningDelegateProxy.swift */; };
 		11C8854A219F224700133696 /* RxMapViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C88549219F224700133696 /* RxMapViewDelegateProxy.swift */; };
 		11C8854C219F229300133696 /* MKMapView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8854B219F229300133696 /* MKMapView+Rx.swift */; };
-		11C8859421A088C500133696 /* UIWebView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8859321A088C500133696 /* UIWebView+Rx.swift */; };
 		11E74C7921C1568D001CCCFE /* RxCollectionEventContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E74C7821C1568D001CCCFE /* RxCollectionEventContainer.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +69,6 @@
 		11C8853F219DF9FB00133696 /* RxViewControllerTransitioningDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxViewControllerTransitioningDelegateProxy.swift; sourceTree = "<group>"; };
 		11C88549219F224700133696 /* RxMapViewDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMapViewDelegateProxy.swift; sourceTree = "<group>"; };
 		11C8854B219F229300133696 /* MKMapView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Rx.swift"; sourceTree = "<group>"; };
-		11C8859321A088C500133696 /* UIWebView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWebView+Rx.swift"; sourceTree = "<group>"; };
 		11E74C7821C1568D001CCCFE /* RxCollectionEventContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCollectionEventContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +118,6 @@
 				11BD7791219DDC87002269F1 /* UITextField+Rx.swift */,
 				11465B2321B7EEEC00470B71 /* UIView+Rx.swift */,
 				1143105F217A240F007C0E1A /* UIViewController+Rx.swift */,
-				11C8859321A088C500133696 /* UIWebView+Rx.swift */,
 				11465B1D21B7E89A00470B71 /* UINavigationController+Rx.swift */,
 				11C8854B219F229300133696 /* MKMapView+Rx.swift */,
 				11AA9B95219D9223007B5ADF /* MultipleDelegate.h */,
@@ -280,7 +277,6 @@
 				1143107D217A24A6007C0E1A /* RxPageViewControllerDataSourceProxy.swift in Sources */,
 				11C88540219DF9FB00133696 /* RxViewControllerTransitioningDelegateProxy.swift in Sources */,
 				1143107C217A24A6007C0E1A /* RxPageViewControllerDelegateProxy.swift in Sources */,
-				11C8859421A088C500133696 /* UIWebView+Rx.swift in Sources */,
 				11431068217A240F007C0E1A /* RxUIKit.swift in Sources */,
 				11C8854A219F224700133696 /* RxMapViewDelegateProxy.swift in Sources */,
 				1143106A217A240F007C0E1A /* UIPageViewController+Rx.swift in Sources */,
