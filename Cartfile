@@ -1,2 +1,1 @@
-# github "ReactiveX/RxSwift" ~> 5.0
-github "AlexanderNaumov/RxSwift" "master"
+github "ReactiveX/RxSwift" ~> 5.0
