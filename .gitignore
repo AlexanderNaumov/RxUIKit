@@ -2,3 +2,5 @@ Carthage/
 .DS_Store
 RxUIKit.xcodeproj/xcuserdata
 RxUIKit.xcodeproj/project.xcworkspace/xcuserdata
+.build/
+.swiftpm/

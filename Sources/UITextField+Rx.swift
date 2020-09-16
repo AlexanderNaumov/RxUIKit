@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import MultipleDelegate
 
 extension Reactive where Base: UITextField {
     public var delegate: DelegateProxy<UITextField, UITextFieldDelegate> {

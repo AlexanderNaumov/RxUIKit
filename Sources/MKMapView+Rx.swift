@@ -9,6 +9,7 @@
 import MapKit
 import RxCocoa
 import RxSwift
+import MultipleDelegate
 
 extension Reactive where Base: MKMapView {
     public var delegate: DelegateProxy<MKMapView, MKMapViewDelegate> {

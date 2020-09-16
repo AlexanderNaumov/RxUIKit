@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import MultipleDelegate
 
 extension Reactive where Base: UIScrollView {
     public func setRetainDelegate(_ delegate: UIScrollViewDelegate) -> Disposable {
