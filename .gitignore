@@ -1,5 +1,6 @@
 Carthage/
 .DS_Store
+RxUIKit.xcworkspace/xcuserdata/
 RxUIKit.xcodeproj/xcuserdata
 RxUIKit.xcodeproj/project.xcworkspace/xcuserdata
 .build/
