@@ -37,6 +37,16 @@
 		235C03742513C8C2009DD2D7 /* RxTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235C03702513C8C2009DD2D7 /* RxTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		235C037F2513CCBF009DD2D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11431049217A2400007C0E1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 235C031C2513C6F7009DD2D7;
+			remoteInfo = MultipleDelegate;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		11431052217A2400007C0E1A /* RxUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11431056217A2400007C0E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -227,6 +237,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				235C03802513CCBF009DD2D7 /* PBXTargetDependency */,
 			);
 			name = RxUIKit;
 			productName = RxUIKit;
@@ -257,7 +268,7 @@
 		11431049217A2400007C0E1A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Alexander Naumov";
 				TargetAttributes = {
 					11431051217A2400007C0E1A = {
@@ -275,6 +286,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 11431048217A2400007C0E1A;
 			productRefGroup = 11431053217A2400007C0E1A /* Products */;
@@ -346,6 +358,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		235C03802513CCBF009DD2D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 235C031C2513C6F7009DD2D7 /* MultipleDelegate */;
+			targetProxy = 235C037F2513CCBF009DD2D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		11431058217A2400007C0E1A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -373,6 +393,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -437,6 +458,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

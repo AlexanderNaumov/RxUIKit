@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "11431051217A2400007C0E1A"
-               BuildableName = "RxUIKit.framework"
-               BlueprintName = "RxUIKit"
+               BlueprintIdentifier = "235C031C2513C6F7009DD2D7"
+               BuildableName = "MultipleDelegate.framework"
+               BlueprintName = "MultipleDelegate"
                ReferencedContainer = "container:RxUIKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,15 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "11431051217A2400007C0E1A"
-            BuildableName = "RxUIKit.framework"
-            BlueprintName = "RxUIKit"
-            ReferencedContainer = "container:RxUIKit.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -59,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "11431051217A2400007C0E1A"
-            BuildableName = "RxUIKit.framework"
-            BlueprintName = "RxUIKit"
+            BlueprintIdentifier = "235C031C2513C6F7009DD2D7"
+            BuildableName = "MultipleDelegate.framework"
+            BlueprintName = "MultipleDelegate"
             ReferencedContainer = "container:RxUIKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
