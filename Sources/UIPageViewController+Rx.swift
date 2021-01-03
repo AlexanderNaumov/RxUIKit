@@ -42,7 +42,7 @@ extension Reactive where Base: UIPageViewController {
         -> (_ source: O)
         -> Disposable
         where O.Element == DataSource.Element {
-        _ = base.rx.setViewController.takeUntil(base.rx.deallocated).bind { [weak vc = base] params in
+        _ = base.rx.setViewController.take(until: base.rx.deallocated).bind { [weak vc = base] params in
             guard let vc = vc else { return }
             dataSource.pageViewController(vc, setViewControllerAt: params.at, direction: params.direction, animated: params.animated)
         }
