@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11431081217A2557007C0E1A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1143107F217A2557007C0E1A /* RxCocoa.framework */; };
-		11431082217A2557007C0E1A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11431080217A2557007C0E1A /* RxSwift.framework */; };
+		11A61CDF25CDB4290069A982 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A61CDE25CDB4290069A982 /* RxSwift.xcframework */; };
+		11A61CE325CDB42C0069A982 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A61CE225CDB42C0069A982 /* RxCocoa.xcframework */; };
+		11A61CE725CDB4370069A982 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A61CE625CDB4370069A982 /* RxRelay.xcframework */; };
 		232F475D2515505B00FCB9C9 /* MultipleDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 232F475C2515505B00FCB9C9 /* MultipleDelegate.m */; };
 		232F47612515506200FCB9C9 /* MultipleDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 232F47602515506200FCB9C9 /* MultipleDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		232F4772251550BF00FCB9C9 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F4768251550BF00FCB9C9 /* UIView+Rx.swift */; };
@@ -22,7 +23,6 @@
 		232F477A251550BF00FCB9C9 /* UIPresentationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F4770251550BF00FCB9C9 /* UIPresentationController+Rx.swift */; };
 		232F477B251550BF00FCB9C9 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F4771251550BF00FCB9C9 /* UIViewController+Rx.swift */; };
 		232F4783251550EE00FCB9C9 /* DelegateProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F4781251550EE00FCB9C9 /* DelegateProxyType.swift */; };
-		232F4784251550EE00FCB9C9 /* DisposeOnDealloc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F4782251550EE00FCB9C9 /* DisposeOnDealloc.swift */; };
 		232F478C2515510C00FCB9C9 /* RxSectionedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F47882515510C00FCB9C9 /* RxSectionedItem.swift */; };
 		232F478D2515510C00FCB9C9 /* RxCollectionEventContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F47892515510C00FCB9C9 /* RxCollectionEventContainer.swift */; };
 		232F478E2515510C00FCB9C9 /* RxTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F478A2515510C00FCB9C9 /* RxTableViewDataSource.swift */; };
@@ -49,8 +49,9 @@
 
 /* Begin PBXFileReference section */
 		11431052217A2400007C0E1A /* RxUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1143107F217A2557007C0E1A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		11431080217A2557007C0E1A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		11A61CDE25CDB4290069A982 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
+		11A61CE225CDB42C0069A982 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
+		11A61CE625CDB4370069A982 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
 		232F47582515505300FCB9C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MultipleDelegate/Info.plist; sourceTree = "<group>"; };
 		232F475C2515505B00FCB9C9 /* MultipleDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultipleDelegate.m; path = MultipleDelegate/Sources/MultipleDelegate.m; sourceTree = "<group>"; };
 		232F47602515506200FCB9C9 /* MultipleDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultipleDelegate.h; path = MultipleDelegate/Sources/include/MultipleDelegate.h; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		232F4770251550BF00FCB9C9 /* UIPresentationController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIPresentationController+Rx.swift"; path = "Sources/UIPresentationController+Rx.swift"; sourceTree = "<group>"; };
 		232F4771251550BF00FCB9C9 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Rx.swift"; path = "Sources/UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		232F4781251550EE00FCB9C9 /* DelegateProxyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DelegateProxyType.swift; path = Sources/Common/DelegateProxyType.swift; sourceTree = "<group>"; };
-		232F4782251550EE00FCB9C9 /* DisposeOnDealloc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisposeOnDealloc.swift; path = Sources/Common/DisposeOnDealloc.swift; sourceTree = "<group>"; };
 		232F47882515510C00FCB9C9 /* RxSectionedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxSectionedItem.swift; path = Sources/DataSources/RxSectionedItem.swift; sourceTree = "<group>"; };
 		232F47892515510C00FCB9C9 /* RxCollectionEventContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxCollectionEventContainer.swift; path = Sources/DataSources/RxCollectionEventContainer.swift; sourceTree = "<group>"; };
 		232F478A2515510C00FCB9C9 /* RxTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxTableViewDataSource.swift; path = Sources/DataSources/RxTableViewDataSource.swift; sourceTree = "<group>"; };
@@ -87,8 +87,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11431081217A2557007C0E1A /* RxCocoa.framework in Frameworks */,
-				11431082217A2557007C0E1A /* RxSwift.framework in Frameworks */,
+				11A61CDF25CDB4290069A982 /* RxSwift.xcframework in Frameworks */,
+				11A61CE325CDB42C0069A982 /* RxCocoa.xcframework in Frameworks */,
+				11A61CE725CDB4370069A982 /* RxRelay.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,8 +125,9 @@
 		1143107E217A2557007C0E1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1143107F217A2557007C0E1A /* RxCocoa.framework */,
-				11431080217A2557007C0E1A /* RxSwift.framework */,
+				11A61CE625CDB4370069A982 /* RxRelay.xcframework */,
+				11A61CE225CDB42C0069A982 /* RxCocoa.xcframework */,
+				11A61CDE25CDB4290069A982 /* RxSwift.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				232F4781251550EE00FCB9C9 /* DelegateProxyType.swift */,
-				232F4782251550EE00FCB9C9 /* DisposeOnDealloc.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -268,7 +269,7 @@
 		11431049217A2400007C0E1A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Alexander Naumov";
 				TargetAttributes = {
 					11431051217A2400007C0E1A = {
@@ -329,7 +330,6 @@
 				232F4775251550BF00FCB9C9 /* RxUIKit.swift in Sources */,
 				232F4777251550BF00FCB9C9 /* UITextField+Rx.swift in Sources */,
 				232F4776251550BF00FCB9C9 /* UITableView+Rx.swift in Sources */,
-				232F4784251550EE00FCB9C9 /* DisposeOnDealloc.swift in Sources */,
 				232F47A32515513B00FCB9C9 /* RxTextFieldDelegateProxy.swift in Sources */,
 				232F4779251550BF00FCB9C9 /* MKMapView+Rx.swift in Sources */,
 				232F4772251550BF00FCB9C9 /* UIView+Rx.swift in Sources */,
@@ -501,10 +501,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -532,10 +528,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
