@@ -10,7 +10,7 @@ let package = Package(
         .library(name: "RxUIKit", targets: ["RxUIKit"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.0.0")),
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "6.1.0"),
         .package(path: "MultipleDelegate")
     ],
     targets: [
