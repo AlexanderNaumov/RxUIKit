@@ -11,7 +11,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "6.1.0"),
-        .package(path: "MultipleDelegate")
+        .package(url: "https://github.com/AlexanderNaumov/MultipleDelegate", from: "0.0.1")
     ],
     targets: [
         .target(name: "RxUIKit", dependencies: ["MultipleDelegate", .product(name: "RxCocoa", package: "RxSwift")], path: "Sources")

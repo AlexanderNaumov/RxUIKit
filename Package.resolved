@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "MultipleDelegate",
+        "repositoryURL": "https://github.com/AlexanderNaumov/MultipleDelegate",
+        "state": {
+          "branch": null,
+          "revision": "781e4eec8687621e8a11c994f2845a4b6e1a8c35",
+          "version": "0.0.1"
+        }
+      },
+      {
         "package": "RxSwift",
         "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
         "state": {
